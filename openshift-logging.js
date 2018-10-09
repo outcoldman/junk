@@ -4,7 +4,7 @@ angular.module("mylinkextensions", ['openshiftConsole'])
           extensionRegistry.add('log-links', _.spread(function(resource, options) {
             return {
               type: 'dom',
-              node: '<span><a href="https://extension-point.example.com">' + resource.metadata.name + '</a><span class="action-divider">|</span></span>'
+              node: '<span><a href="http://splunk.local.outcold.solutions:8000/en-US/app/monitoringopenshift/search?q=search%20openshift_pod_name%3D%22'+encodeURIComponent(resource.metadata.name)+'%22">' + resource.metadata.name + '</a><span class="action-divider">|</span></span>'
             };
           }));
        });
